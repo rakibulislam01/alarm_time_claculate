@@ -4,8 +4,6 @@ import re
 import operator
 import time
   
-
-
 class Detect_Date():
     mon = ['january','february','march','april','may','june','july','august','september','october','november','december']
     def __init__(self,device_time = '0'):
