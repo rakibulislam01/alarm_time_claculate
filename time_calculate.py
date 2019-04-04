@@ -3,6 +3,8 @@ from dateutil.relativedelta import relativedelta
 import re
 import operator
 import time
+  
+
 
 class Detect_Date():
     mon = ['january','february','march','april','may','june','july','august','september','october','november','december']
@@ -37,7 +39,7 @@ class Detect_Date():
         data = data.replace('one','1').replace('two','2').replace('three','3').replace('four','4').replace('five','5').replace('six','6').replace('seven','7').replace('eight','8').replace('nine','9').replace('zero','0')
         # =============================================================================
         #     #detect hour and minute from integers
-        # =============================================================================     
+        # =============================================git commit -m "my comment about the changes"================================     
         integer = re.findall('\d+', data)
         alarm = self.now
         data_list = data.split(' ')
