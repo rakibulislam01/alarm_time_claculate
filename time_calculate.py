@@ -32,7 +32,7 @@ class Detect_Date():
         self.status = 1
 # =============================================================================
 # =============================================================================
-    def calculate(self,data):
+    def DateTimeDetect(self,data):
         data = data.lower()
         data = data.replace('one','1').replace('two','2').replace('three','3').replace('four','4').replace('five','5').replace('six','6').replace('seven','7').replace('eight','8').replace('nine','9').replace('zero','0')
         # =============================================================================
@@ -272,7 +272,7 @@ class Detect_Date():
         return alarm
     
     
-    def minute_difference(self,data):
+    def minute_diff_from_now(self,data):
         alarm = self.calculate(data)
         alarm_sec = time.mktime(alarm.timetuple())
         now_sec = time.mktime(self.start_time.timetuple())
@@ -281,7 +281,7 @@ class Detect_Date():
         return difference
     
     
-    def hour_difference(self,data):
+    def hour_diff_from_now(self,data):
         alarm = self.calculate(data)
         alarm_sec = time.mktime(alarm.timetuple())
         now_sec = time.mktime(self.start_time.timetuple())
@@ -290,7 +290,7 @@ class Detect_Date():
         return difference/(60)
     
     
-    def day_difference(self,data):
+    def day_diff_from_now(self,data):
         alarm = self.calculate(data)
         alarm_sec = time.mktime(alarm.timetuple())
         now_sec = time.mktime(self.start_time.timetuple())
@@ -299,7 +299,7 @@ class Detect_Date():
         return difference/(60*24)
     
     
-    def second_difference(self,data):
+    def second_diff_from_now(self,data):
         alarm = self.calculate(data)
         alarm_sec = time.mktime(alarm.timetuple())
         now_sec = time.mktime(self.start_time.timetuple())
@@ -308,7 +308,7 @@ class Detect_Date():
         return difference*60
     
     
-    def milisecond_difference(self,data):
+    def milisecond_diff_from_now(self,data):
         alarm = self.calculate(data)
         alarm_sec = time.mktime(alarm.timetuple())
         now_sec = time.mktime(self.start_time.timetuple())
