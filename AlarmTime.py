@@ -273,7 +273,34 @@ class DetectDate():
     
     
     def minute_diff_from_now(self,data):
-        alarm = self.calculate(data)
+        alarm = self.DateTimeDetect(data)
+        alarm_sec = time.mktime(alarm.timetuple())
+        now_sec = time.mktime(self.start_time.timetuple())
+        ###  calculate second distance from now to alarm
+        difference = alarm_sec-now_sec
+        return difference/60
+    
+    
+    def hour_diff_from_now(self,data):
+        alarm = self.DateTimeDetect(data)
+        alarm_sec = time.mktime(alarm.timetuple())
+        now_sec = time.mktime(self.start_time.timetuple())
+        ###  calculate second distance from now to alarm
+        difference = alarm_sec-now_sec
+        return difference/3600
+    
+    
+    def day_diff_from_now(self,data):
+        alarm = self.DateTimeDetect(data)
+        alarm_sec = time.mktime(alarm.timetuple())
+        now_sec = time.mktime(self.start_time.timetuple())
+        ###  calculate second distance from now to alarm
+        difference = alarm_sec-now_sec
+        return difference/(3600*24)
+    
+    
+    def second_diff_from_now(self,data):
+        alarm = self.DateTimeDetect(data)
         alarm_sec = time.mktime(alarm.timetuple())
         now_sec = time.mktime(self.start_time.timetuple())
         ###  calculate second distance from now to alarm
@@ -281,37 +308,11 @@ class DetectDate():
         return difference
     
     
-    def hour_diff_from_now(self,data):
-        alarm = self.calculate(data)
-        alarm_sec = time.mktime(alarm.timetuple())
-        now_sec = time.mktime(self.start_time.timetuple())
-        ###  calculate second distance from now to alarm
-        difference = alarm_sec-now_sec
-        return difference/(60)
-    
-    
-    def day_diff_from_now(self,data):
-        alarm = self.calculate(data)
-        alarm_sec = time.mktime(alarm.timetuple())
-        now_sec = time.mktime(self.start_time.timetuple())
-        ###  calculate second distance from now to alarm
-        difference = alarm_sec-now_sec
-        return difference/(60*24)
-    
-    
-    def second_diff_from_now(self,data):
-        alarm = self.calculate(data)
-        alarm_sec = time.mktime(alarm.timetuple())
-        now_sec = time.mktime(self.start_time.timetuple())
-        ###  calculate second distance from now to alarm
-        difference = alarm_sec-now_sec
-        return difference*60
-    
-    
     def milisecond_diff_from_now(self,data):
-        alarm = self.calculate(data)
+        alarm = self.DateTimeDetect(data)
         alarm_sec = time.mktime(alarm.timetuple())
         now_sec = time.mktime(self.start_time.timetuple())
         ###  calculate second distance from now to alarm
         difference = alarm_sec-now_sec
-        return difference*60*60
+        return difference*1000
+
