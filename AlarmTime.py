@@ -39,6 +39,8 @@ class DetectDate:
     # =============================================================================
     # =============================================================================
     def date_time_detect(self, data):
+        if data.replace(' ', '') == '':
+            return self.start_time
         data = data.lower()
         data = data.replace('one', '1').replace('two', '2').replace('three', '3').replace('four', '4').replace('five',
                                                                                                                '5').replace(
@@ -280,6 +282,7 @@ class DetectDate:
                                      hour=self.alarm_hour, minute=self.alarm_minute, second=0)
 
         return alarm
+        # return alarm.year, alarm.month, alarm.day, alarm.hour, alarm.minute, alarm.second
 
     def minute_diff_from_now(self, data):
         alarm = self.date_time_detect(data)
@@ -320,3 +323,8 @@ class DetectDate:
         # calculate second distance from now to alarm
         difference = alarm_sec - now_sec
         return difference * 1000
+
+
+d = DetectDate()
+p = d.date_time_detect('after 6 month 700 days 8 hour 5 minute')
+print(p.day)

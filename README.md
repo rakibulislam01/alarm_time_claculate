@@ -6,7 +6,7 @@ Detect alarm time from natural sentence.
 
 ## Installation
 
-Use the package manager [pip](https://pip.pypa.io/en/stable/) to install foobar.
+Use the package manager [pip](https://pip.pypa.io/en/stable/) to install AlarmTime.
 
 ```bash
 pip install AlarmTime
@@ -26,35 +26,27 @@ print(t.now)  #2019-05-02 14:05:39.393185
 t = DetectDate() 
 print(t.now) #2019-04-21 12:26:12.542967
 
+# Now date --> Sunday, June 16, 2019. This function calculates result dependent on this day.
 t = DetectDate()
 
 target_time = t.date_time_detect('detect the time and date on December 16 8 p.m')
-print(target_time) 
+print(target_time) # 2019-12-16 20:00:00.793445
 
 target_time = t.date_time_detect('detect the time and date on December 16 ')
-print(target_time) 
+print(target_time) # 2019-12-16 12:00:00.721705
 
 target_time = t.date_time_detect('after 700 days')
-print(target_time)
+print(target_time) # 2021-05-16 14:31:17.534070
 
 target_time = t.date_time_detect('after 6 month 700 days 8 hour 5 minute')
-print(target_time)
+print(target_time) # 2022-05-17 22:36:37.402567
 
 
 # now we can get the value of target year, day, month, hour, minute, second
-print(target_time.day) 
+print(target_time.day) # 17
 ```
-
-# Output
-### 2019-04-21 12:26:12.542967
-### 2019-12-16 20:00:00.542967
-### 2019-12-16 00:00:00.542967
-### 2021-03-21 12:26:12.542967
-### 2021-09-20 20:31:12.542967
-### 2021-03-21 12:26:12.542967
-### 21
-
 #
+# Time Difference
 
 ```python
 from AlarmTime import DetectDate
